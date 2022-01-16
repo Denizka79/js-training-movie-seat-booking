@@ -21,3 +21,7 @@ for (let i = 0; i < numberOfSeats; i++) {
         console.log(selectedSeatCounter);
     });
 }
+
+movieSelect.addEventListener("change", function() {
+    totalSum.innerHTML = parseInt(movieSelect.value) * selectedSeatCounter;
+});
