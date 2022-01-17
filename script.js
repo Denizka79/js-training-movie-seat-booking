@@ -22,10 +22,13 @@ for (let i = 0; i < numberOfSeats; i++) {
         }
         ticketsCount.innerHTML = selectedSeatCounter;
         totalSum.innerHTML = parseInt(movieSelect.value) * selectedSeatCounter;
+        localStorage.setItem("selectedSeats", JSON.stringify(movieSeatsNumbers));
         console.log(movieSeatsNumbers);
     });
 }
 
-movieSelect.addEventListener("change", function() {
+movieSelect.addEventListener("change", function(evt) {
     totalSum.innerHTML = parseInt(movieSelect.value) * selectedSeatCounter;
+    localStorage.setItem("selectedMovieIndex", evt.target.selectedIndex);
+    localStorage.setItem("selectedMoviePrice", evt.target.value);
 });
